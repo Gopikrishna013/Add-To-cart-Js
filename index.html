@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="/z_add_tocart/style.css">
+</head>
+
+<body>
+    <nav class="head">
+        <h1>Apple - Store</h1>
+    </nav>
+    <!-- <hr width="100%"> -->
+    
+    <section class="container content-section">
+            <h2 class="section-header" style="margin-left: 20px; color: black;">Electronics</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    
+                    <img class="shop-item-image" onclick="location.href='/z_add_tocart/iphone_cart/iphone.html'" src="/z_add_tocart/uploads/iphone.webp">
+                    <div class="shop-item-details">
+                        <div class="name">  
+                        <span class="shop-item-title"><b>Apple</b> -
+                            iPhone 15 Pro Max (256 GB) -  Blue Titanium</span> </div> <br><br>
+                        <span class="shop-item-price">₹154989</span> <br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <hr width="80%">
+                <div class="shop-item">
+                    
+                    <img class="shop-item-image" onclick="location.href='/z_add_tocart/iphone_cart/watch.html'" src="/z_add_tocart/uploads/watch.webp">
+                    <div class="shop-item-details">
+                        <span class="shop-item-title"><b>Apple -</b>
+                            Watch Ultra [GPS + Cellular 49 mm] smart watch w/Rugged Titanium  Case 
+                             & Green Alpine Loop - Medium. Fitness Tracker, Precision GPS, Action Button, Extra-Long</span> <br><br>
+                        <span class="shop-item-price">₹9999</span> <br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <hr width="70%">
+                <div class="shop-item">
+                    
+                    <img class="shop-item-image" src="/z_add_tocart/uploads/mac.webp" height="200px">
+                    <div class="shop-item-details">
+                        <span class="shop-item-title"><b>Apple -</b>
+                            MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD  Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad;</span> <br><br>
+                        <span class="shop-item-price">₹243131</span><br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <hr width="80%">
+                <!-- <div class="shop-item">
+                    
+                    <img class="shop-item-image" src="/z_add_tocart/uploads/burger.avif">
+                    <div class="shop-item-details">
+                        <span class="shop-item-title">Burger</span>
+                        <span class="shop-item-price">$19.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2 class="section-header" style="margin-left: 25px; color: black;">Clothes </h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    
+                    <img class="shop-item-image" src="/z_add_tocart/uploads/shoe.jpg" onclick="location.href='/z_add_tocart/iphone_cart/shoe.html'">
+                    <div class="shop-item-details">
+                        <span class="shop-item-title">Red Tape Sneaker Casual Shoes for Men | Soft Cushion Insole, 
+                            Slip-Resistance, Dynamic Feet Support & Arch Support</span> <br><br>
+                        <span class="shop-item-price">₹2789</span><br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item" style="margin-top: 20px;">
+                   
+                    <img class="shop-item-image"  src="/z_add_tocart/uploads/jacket.jpg" onclick="location.href='/z_add_tocart/iphone_cart/jacket.html'">
+                    <div class="shop-item-details">
+                        <span class="shop-item-title">Men Denim Full Sleeve Regular Winter Jacket</span> <br><br>
+                        <span class="shop-item-price">₹1769</span><br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div class="cart" style="margin-top: 30px;">
+        <section class="container content-section" >
+            <h2 class="section-header" style="margin-left: 50px; color: black;">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+    </div>
+
+
+        <script src="/z_add_tocart/script.js"></script>
+    
+    </body>
+    
+    </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products</title>
+  <!-- <link rel="stylesheet" href="/z3_hover_products/style.css" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .product_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    /* flex-wrap: wrap; */
+  }
+  .img_full {
+    width: 40%;
+  }
+  .main_img {
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  .product_desc {
+    width: 60%;
+    margin-top: 40px;
+    padding-left: 30px;
+  }
+  .title {
+    font-weight: 300;
+    font-size: 34px;
+    letter-spacing: -2px;
+  }
+  .subtitle {
+    margin-top: 20px;
+    font-weight: 200;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgb(27, 25, 25);
+    font-weight: 400;
+  }
+  .price {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgb(27, 25, 25);
+  }
+  .price strong {
+    color: #009688;
+    font-weight: bold;
+  }
+  
+  .description {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939e;
+  }
+  .product_preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 20px;
+  }
+  .small_img {
+    margin: 5px;
+    width: 15%;
+    height: 30%;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+  }
+  .active {
+    border: 2px solid #009688;
+  }
+  .add_to_cart {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    background-color: #009688;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 50%);
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .product_container {
+      flex-direction: column;
+    }
+    .img_full {
+      width: 100%;
+    }
+    .product_desc {
+      width: 100%;
+    }
+    .title {
+      font-size: 34px;
+    }
+  }
+  
+
+  </style>
+</head>
+
+<body>
+  <section class="product_container">
+
+  </section>
+
+  <!-- JS  -->
+  <!-- <script src="/z3_hover_products/script.js"></script> -->
+  <script>
+
+var productData = [
+    {
+      id: "1",
+      name: "Men Denim Full Sleeve Regular Winter Jacket",
+      preview:
+      "https://m.media-amazon.com/images/I/61zXf1BClKL._SL1440_.jpg",
+      photos: [
+        "https://m.media-amazon.com/images/I/61zXf1BClKL._SL1440_.jpg",
+        "https://m.media-amazon.com/images/I/61mwfLf4PdL._SL1440_.jpg",
+        "https://m.media-amazon.com/images/I/61jnEmEci7L._SL1440_.jpg",
+        "https://m.media-amazon.com/images/I/617gp0M2-yL._SL1440_.jpg",
+        "https://m.media-amazon.com/images/I/61HJem+xJxL._SL1440_.jpg"
+      ],
+      description:
+        "KOTTY Men Denim Full Sleeve Regular Winter Jacket, Dynamic Feet Support & Arch Support",
+      size: [1, 1, 0, 1, 0],
+      isAccessory: false,
+      brand: "US POLO",
+      price: 1769
+    }
+  ];
+  
+  var dynamicProduct = document.querySelector(".product_container");
+  
+  productData.map((item) => {
+    dynamicProduct.innerHTML += `
+      <div class="img_full">
+      <img class ="main_img" src=${item.preview} alt="">
+    </div>
+    <div class="product_desc">
+      <h2 class="title">${item.name}</h2>
+      <h3 class="subtitle">${item.brand}</h3>
+      <h3 class="price">Price Rs : <strong>${item.price}</strong></h3>
+      <h4 class="subtitle">Description</h4>
+      <p class="description"> 
+       ${item.description}
+      </p>
+      <h4 class="subtitle">Product Preview</h4>
+      <div class="product_preview">
+         <img  class="small_img active"  src="${item.photos[0]}" alt="">
+         <img  class="small_img" src="${item.photos[1]}" alt="">
+         <img class="small_img" src="${item.photos[2]}" alt="">
+         <img class="small_img" src="${item.photos[3]}" alt="">
+         <img class="small_img" src="${item.photos[4]}" alt="">
+      </div>
+      <button class="add_to_cart">Add to Cart</button>
+    </div>
+    `;
+  });
+  
+  var smallImg = document.querySelectorAll(".small_img");
+  
+  smallImg.forEach((small) =>
+    small.addEventListener("click", function (e) {
+      var fullImg = document.querySelector(".main_img");
+      var newImg = document.querySelectorAll(".small_img");
+      fullImg.src = e.target.src;
+      for (var i = 0; i < newImg.length; i++) {
+        newImg[i].classList.remove("active");
+      }
+      e.target.classList.add("active");
+    })
+  );
+  
+
+  </script>
+  
+  <!-- JS  -->
+</body>
+
+</html>
